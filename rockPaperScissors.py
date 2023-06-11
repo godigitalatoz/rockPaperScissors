@@ -1,0 +1,45 @@
+import random
+
+user_wins = 0
+computer_wins = 0
+
+options = ['r','p','s']
+
+print ('WELCOME TO -- ROCK -- PAPER -- SCISSORS')
+print ('Rock = R, Paper = P, Scissors = S')
+
+while True:
+    user_choice = input ('Enter R/P/S or Q for Quit ').lower()
+    if user_choice == 'q':
+        break
+
+    if user_choice not in options:
+        continue
+    
+    random_number = random.randint (0,2)
+
+    computer_choice = options [random_number]
+    print ('compurt_choice =', computer_choice)
+
+    if user_choice == 'r' and computer_choice == 's':
+        print ('You Won')
+        user_wins +=1
+    
+    elif user_choice == 'p' and computer_choice == 'r':
+        print ('You Won')
+        user_wins +=1
+    
+    elif user_choice == 's' and computer_choice == 'p':
+        print ('You Won')
+        user_wins +=1
+
+    elif user_choice == computer_choice:
+        print ('-DRAW-')
+
+    else:
+        print ('You Lost')
+        computer_wins += 1
+
+print ('You Won', user_wins, 'times')
+print ('Computer Won', computer_wins, 'times')
+print ('Goodbye')
